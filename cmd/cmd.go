@@ -27,6 +27,7 @@ func Exec(comm string) {
 	}
 	cs := strings.Split(comm, " ")
 	_exec(cs[0], cs[1:]...)
+	log.Println("Execute successully")
 }
 
 // GoGet acts as "go get pkg_a pkg_b" command to install Go packages when you run GoGet(pkg_a, pkg_b).
@@ -38,4 +39,5 @@ func GoGet(pkgs ...string) {
 		return
 	}
 	_exec("go", append([]string{"get"}, pkgs...)...)
+	log.Println("Install successully")
 }
